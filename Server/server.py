@@ -1,5 +1,7 @@
 from flask import Flask, request, jsonify,render_template
-from . import util
+# from . import util
+import util
+
 
 
 app = Flask(__name__)
@@ -9,14 +11,26 @@ def index():
     return render_template('index.html')
 
 
+# @app.route('/get_location_names', methods=['GET'])
+# def get_location_names():
+#     response = jsonify({
+#         'locations': util.get_location_names()
+#     })
+#     response.headers.add('Access-Control-Allow-Origin', '*')
+
+#     return response
 @app.route('/get_location_names', methods=['GET'])
 def get_location_names():
-    response = jsonify({
-        'locations': util.get_location_names()
-    })
-    response.headers.add('Access-Control-Allow-Origin', '*')
+    try:
+        locations = util.get_location_names()
+        print("Fetched locations:", locations)
+        response = jsonify({'locations': locations})
+        response.headers.add('Access-Control-Allow-Origin', '*')
+        return response
+    except Exception as e:
+        print("Error in /get_location_names:", e)
+        return "Internal Server Error", 500
 
-    return response
 
 @app.route('/predict_home_price', methods=['GET', 'POST'])
 def predict_home_price():

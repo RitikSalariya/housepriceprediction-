@@ -1,30 +1,4 @@
-@media (max-width: 600px) {
-  body {
-    padding: 1rem;
-    background-size: cover;
-    background-position: top;
-  }
-
-  .container {
-    padding: 1rem;
-    max-width: 100%;
-    border-radius: 10px;
-  }
-
-  h2 {
-    font-size: 1.5rem;
-  }
-
-  input, select, button {
-    font-size: 1rem;
-    padding: 0.5rem;
-  }
-
-  .result {
-    font-size: 1rem;
-  }
-}
-
+/* ----------------- Base Styles ----------------- */
 
 body {
   background-image: url("h.jpg");
@@ -33,9 +7,8 @@ body {
   background-position: center;
   font-family: Arial, sans-serif;
   padding: 2rem;
+  margin: 0;
 }
-
-
 
 .container {
   max-width: 500px;
@@ -47,7 +20,6 @@ body {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 
-  /* 3D-style box shadow */
   box-shadow:
     0 4px 8px rgba(0, 0, 0, 0.2),
     0 10px 20px rgba(0, 0, 0, 0.3),
@@ -56,7 +28,6 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.3);
   color: #000;
 }
-
 
 h2 {
   text-align: center;
@@ -67,11 +38,13 @@ label {
   margin: 1rem 0 0.3rem;
 }
 
-select, input {
+select,
+input {
   width: 100%;
   padding: 0.6rem;
   border-radius: 6px;
   border: 1px solid #ccc;
+  font-size: 1rem;
 }
 
 button {
@@ -95,4 +68,34 @@ button:hover {
   font-weight: bold;
   text-align: center;
   color: #333;
+}
+
+/* ----------------- Mobile Responsive ----------------- */
+
+@media (max-width: 600px) {
+  body {
+    padding: 1rem;
+    background-position: top;
+  }
+
+  .container {
+    padding: 1rem;
+    max-width: 100%;
+    border-radius: 10px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  input,
+  select,
+  button {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+
+  .result {
+    font-size: 1rem;
+  }
 }
