@@ -1,3 +1,31 @@
+@media (max-width: 600px) {
+  body {
+    padding: 1rem;
+    background-size: cover;
+    background-position: top;
+  }
+
+  .container {
+    padding: 1rem;
+    max-width: 100%;
+    border-radius: 10px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  input, select, button {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+
+  .result {
+    font-size: 1rem;
+  }
+}
+
+
 body {
   background-image: url("h.jpg");
   background-size: cover;

@@ -1,6 +1,6 @@
 async function loadLocations() {
   try {
-    const res = await fetch("http://127.0.0.1:5000/get_location_names");
+    const res = await fetch("/get_location_names");
     const data = await res.json();
     const locationSelect = document.getElementById("location");
 
@@ -28,7 +28,7 @@ async function predictPrice() {
   formData.append("bath", bath);
 
   try {
-    const res = await fetch("http://127.0.0.1:5000/predict_home_price", {
+    const res = await fetch("/predict_home_price", {
       method: "POST",
       body: formData
     });
@@ -41,5 +41,4 @@ async function predictPrice() {
   }
 }
 
-// Load locations on page load
 window.onload = loadLocations;
