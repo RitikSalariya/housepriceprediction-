@@ -6,6 +6,8 @@ import util
 
 app = Flask(__name__)
 
+util.load_saved_artifacts()
+
 @app.route('/')
 def index():
     return render_template('index.html')
